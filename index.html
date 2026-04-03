@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="About Timothy Kaumba – developer, student at MUST, creating simple and useful digital tools.">
+  <title>About Timothy Kaumba | Personal Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f1f5f9;
+      color: #0a2540;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Header & Navigation */
+    .site-header {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(2px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo a {
+      font-size: 1.7rem;
+      font-weight: 800;
+      text-decoration: none;
+      background: linear-gradient(135deg, #1e2b3c, #2c7da0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e4e;
+      font-size: 1rem;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #2c7da0;
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #2c7da0;
+      border-radius: 4px;
+    }
+
+    /* About section */
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+      justify-content: center;
+      margin: 2.5rem 0 3rem;
+    }
+
+    .profile-card {
+      flex: 1.2;
+      min-width: 280px;
+      background: white;
+      border-radius: 2.5rem;
+      padding: 2rem 1.8rem;
+      text-align: center;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.3s;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.12);
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      background: #eef2fa;
+      border-radius: 50%;
+      margin: 0 auto 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 3px solid white;
+      box-shadow: 0 12px 18px -8px rgba(0, 0, 0, 0.1);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .profile-card h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: #1f3b4c;
+    }
+
+    .profile-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2c7da0;
+      background: #e6f4fa;
+      display: inline-block;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info {
+      margin: 1.2rem 0;
+      text-align: left;
+      border-top: 1px solid #eef2f8;
+      padding-top: 1rem;
+    }
+
+    .contact-info p {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.9rem;
+      color: #2c495c;
+      margin: 0.7rem 0;
+    }
+
+    .contact-info i {
+      width: 28px;
+      color: #2c7da0;
+      font-size: 1.1rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 1.3rem;
+    }
+
+    .social-links a {
+      background: #eff3f8;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: #2c5f7a;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .social-links a:hover {
+      background: #2c7da0;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .bio-content {
+      flex: 2;
+      min-width: 280px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(2px);
+      border-radius: 2rem;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.04);
+    }
+
+    .bio-content h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c7da0;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .intro-text {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1f5e7e;
+      margin-bottom: 1.4rem;
+      border-left: 4px solid #6fc2e0;
+      padding-left: 1.2rem;
+    }
+
+    .description {
+      color: #2c3e4e;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      background: #eef5fc;
+      padding: 0.2rem 0.5rem;
+      border-radius: 12px;
+      font-weight: 600;
+      color: #1f5e7e;
+    }
+
+    .skill-section {
+      margin: 1.8rem 0 1rem;
+    }
+
+    .skill-section h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill-tags span {
+      background: white;
+      border-radius: 40px;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #1f5e7e;
+      border: 1px solid #dce9f0;
+      transition: all 0.2s;
+    }
+
+    .skill-tags span:hover {
+      background: #2c7da0;
+      color: white;
+      border-color: #2c7da0;
+      transform: translateY(-2px);
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #1f5e7e;
+      color: white;
+      padding: 0.75rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 1rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .cta-button:hover {
+      background: #0f435c;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px -6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* quote block */
+    .quote-block {
+      margin: 3rem 0 1.5rem;
+      background: rgba(44, 125, 160, 0.06);
+      border-radius: 2rem;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid rgba(44, 125, 160, 0.2);
+    }
+
+    .quote-block i {
+      font-size: 2rem;
+      color: #6ba9c9;
+      opacity: 0.8;
+    }
+
+    .quote-text {
+      font-size: 1.2rem;
+      font-weight: 500;
+      max-width: 700px;
+      margin: 0.8rem auto 0;
+      color: #1f3b4c;
+    }
+
+    /* Journey timeline */
+    .journey {
+      margin: 2.5rem 0 2rem;
+    }
+
+    .journey h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #1f3b4c;
+    }
+
+    .timeline-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      justify-content: space-between;
+    }
+
+    .milestone {
+      flex: 1;
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+      border: 1px solid #eef2f8;
+      transition: all 0.2s;
+    }
+
+    .milestone:hover {
+      transform: translateY(-3px);
+      border-color: #cde5ef;
+      box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.05);
+    }
+
+    .milestone i {
+      font-size: 1.8rem;
+      color: #2c7da0;
+      margin-bottom: 0.8rem;
+    }
+
+    .milestone h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .milestone p {
+      color: #4a6272;
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+      line-height: 1.45;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      text-align: center;
+      padding: 1.8rem 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      font-size: 0.85rem;
+      color: #4f6f8a;
+    }
+
+    /* responsiveness */
+    @media (max-width: 800px) {
+      .about-section {
+        flex-direction: column;
+      }
+
+      .bio-content h1 {
+        font-size: 2rem;
+      }
+
+      .nav-bar {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .timeline-grid {
+        flex-direction: column;
+      }
+
+      .container {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .profile-card,
+      .bio-content {
+        padding: 1.5rem;
+      }
+
+      .bio-content h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <div class="logo">
+        <a href="#">✨ Timothy Kaumba</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#" class="active">About</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Files</a></li>
+        <li><a href="pictures/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- about section: profile + bio -->
+      <div class="about-section">
+        <div class="profile-card">
+          <div class="avatar">
+            <!-- using valid external image from i.ibb.co (clean profile) -->
+            <img src="https://i.ibb.co/LzKrKFm9/Tkays.jpg" alt="Timothy Kaumba portrait" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+          </div>
+          <h2>Timothy Kaumba</h2>
+          <div class="profile-title">Developer & Student</div>
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> MUST, Thyolo, Malawi</p>
+            <p><i class="fas fa-envelope"></i> kaumbatimothy2@gmail.com</p>
+            <p><i class="fas fa-globe"></i> timothykaumba.design</p>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            <a href="https://www.tiktok.com/@timothykaumba196" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/timothym.kaumba" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/265996459630" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="bio-content">
+          <h1>Story behind the code</h1>
+          <div class="intro-text">
+            Creating digital tools that are simple, useful, and clear.
+          </div>
+          <p class="description">
+            I'm Timothy — a developer with a year of experience building websites and apps that work well and feel easy to use. 
+            I started small, making desktop apps for media playing, and now I work with startups to bring ideas to life. 
+            My approach: <span class="highlight">simple, clear, and practical</span>.
+          </p>
+          <p class="description">
+            Outside work, I enjoy watching TV/series, studying, and gaming (Mini militia). I believe the best work comes with balance and curiosity.
+          </p>
+
+          <!-- skill tags section (extra personality) -->
+          <div class="skill-section">
+
+
+      </div>
+
+      <!-- quote block -->
+      <div class="quote-block">
+        <i class="fas fa-quote-left"></i>
+        <div class="quote-text">
+          "Design is not just what it looks like — design is how it works."
+        </div>
+        <div style="margin-top:0.8rem; font-weight:600; color:#2c7da0;">— Timothy Kaumba</div>
+      </div>
+
+      <!-- Journey / milestones -->
+      <div class="journey">
+        <h3>📌 My interests</h3>
+        <div class="timeline-grid">
+          <div class="milestone">
+            <i class="fas fa-laptop-code"></i>
+            <h4>1+ year dev experience</h4>
+            <p>Built interactive web apps, desktop media tools and simple arcade games.</p>
+          </div>
+          <div class="milestone">
+            <i class="fas fa-graduation-cap"></i>
+            <h4>MUST student</h4>
+            <p>Malawi University of Science and Technology — currently deepening knowledge in mathematical sciences.</p>
+          </div>
+          <div class="milestone">
+            <i class="fas fa-gamepad"></i>
+            <h4>Mini militia & gaming</h4>
+            <p>Strategic thinker, enjoy competitive gaming and team coordination in my free time.</p>
+          </div>
+          <div class="milestone">
+            <i class="fas fa-chalkboard-user"></i>
+            <h4>Open for tutorials</h4>
+            <p>Python tutorials, open source, or just tech chats — always ready to share knowledge.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Timothy Kaumba — Designed with <i class="fas fa-heart" style="color:#c95c4a; font-size:0.75rem;"></i> for users.</p>
+      <p style="margin-top:0.5rem; font-size:0.75rem;">📍 Malawi University of Science and Technology (MUST), Thyolo __ Open for projects, python tutorials & chats</p>
+    </div>
+  </footer>
+
+  <!-- tiny interactive alert for demonstration (non-intrusive) -->
+  <script>
+    (function() {
+      // smooth "let's connect" demo
+      const connectBtn = document.getElementById('contactTrigger');
+      if (connectBtn) {
+        connectBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          alert("📬 Reach Timothy: kaumbatimothy2@gmail.com\nWhatsApp: +265 996 459 630\nLet's build something great!");
+        });
+  </script>
+</body>
+</html>
