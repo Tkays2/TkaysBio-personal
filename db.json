@@ -1,0 +1,58 @@
+// db.json - Your online database file
+{
+  "profile": {
+    "name": "Timothy Kaumba",
+    "title": "Developer & Student",
+    "email": "kaumbatimothy2@gmail.com",
+    "bio": "Creating digital tools that are simple, useful, and clear. I'm a developer with a year of experience building websites and apps that work well and feel easy to use.",
+    "github": "https://github.com/tkays2",
+    "linkedin": "https://linkedin.com/in/timothy-kaumba",
+    "twitter": "https://twitter.com/tkays2"
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Interactive Web Apps",
+      "description": "Built responsive web applications with modern JavaScript frameworks",
+      "technologies": ["JavaScript", "React", "HTML/CSS"],
+      "category": "Web Development",
+      "featured": true,
+      "github_url": "https://github.com/tkays2/web-apps"
+    },
+    {
+      "id": 2,
+      "title": "Desktop Media Tools",
+      "description": "Created media player applications using Python and PyQt",
+      "technologies": ["Python", "PyQt", "SQLite"],
+      "category": "Desktop Apps",
+      "featured": true,
+      "github_url": "https://github.com/tkays2/media-player"
+    }
+  ],
+  "interests": [
+    {
+      "id": 1,
+      "title": "1+ year dev experience",
+      "icon": "💻",
+      "description": "Built interactive web apps, desktop media tools and simple arcade games."
+    },
+    {
+      "id": 2,
+      "title": "MUST student",
+      "icon": "🎓",
+      "description": "Malawi University of Science and Technology — currently deepening knowledge in mathematical sciences."
+    },
+    {
+      "id": 3,
+      "title": "Mini militia & gaming",
+      "icon": "🎮",
+      "description": "Strategic thinker, enjoy competitive gaming and team coordination in my free time."
+    },
+    {
+      "id": 4,
+      "title": "Open for tutorials",
+      "icon": "📚",
+      "description": "Python tutorials, open source, or just tech chats — always ready to share knowledge."
+    }
+  ]
+}
